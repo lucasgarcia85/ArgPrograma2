@@ -1,0 +1,116 @@
+let medalla = ["oro","plata","bronce","nada"];
+
+function medallaSegunPuesto(puesto){
+  if (puesto >=1 && puesto <= 3) {
+    return medalla[puesto-1];
+  }
+  
+  else {
+    return "nada";
+  }
+}
+
+
+module Jor
+    
+  
+  def self.picantear!
+    Fideos.aji += 5
+  end
+  
+  def self.plato_del_dia=(comida)
+    @platodia = comida
+    
+  end
+end
+
+module Luchi
+  def self.suavizar! comida, ajies
+    if ( @aji >5)
+      @aji-= 3
+    end
+  end
+  
+    
+  
+end
+
+module Fideos
+  
+  @aji = 0
+  
+  def self.aji=(cantidad)
+    @aji=cantidad
+ 
+  def self.picantes?
+    @platodia>2
+  end
+  
+  def self.descartar_la_salsa!
+    if (@aji >10) 
+      @aji=0
+    end
+    end
+  
+  def self.quitar_ajies! numero
+    @aji-= numero
+  
+  
+end
+
+
+
+
+no es mia
+
+
+module Jor
+  
+  def self.plato_del_dia=(plato)
+    @plato_del_dia=plato
+  end
+  
+  def self.picantear!
+    @plato_del_dia.recibir!
+  end
+end
+
+module Fideos
+  @ajies = 0
+    
+  def self.ajies=(cantidad)
+    @ajies=cantidad
+  end
+  
+  def self.ajies
+    @ajies
+  end
+  
+  def self.recibir!
+    @ajies+=5
+  end
+     
+  def self.picantes?
+    @ajies > 2
+  end
+  
+  def self.descartar_la_salsa!
+    if @ajies>10
+      @ajies=0
+    end    
+  end
+end
+
+module Luchi
+  
+  
+  
+  def self.suavizar!(plato, cantidad)  
+    if (plato.picantes? && plato.ajies<=10)
+       plato.ajies-= cantidad
+    else plato.descartar_la_salsa!     
+    end
+   end
+end
+
+  
